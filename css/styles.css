@@ -1,0 +1,83 @@
+/* GLOBALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*     ETIQUETAS      */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: monospace;
+}
+
+.mar {
+    margin-top: 10rem;
+}
+
+.portada{
+    margin: 10rem;
+}
+
+.fotoPortada {
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.darkMode {
+    background-color: black;
+    color: aliceblue;
+}
+
+.footer__redes {
+    max-width: 5rem;
+}
+
+.img-producto {
+    max-height: 40rem;
+}
+
+.card {
+    margin: 2rem;
+}
+
+/* .card-DARK {
+    color: black
+} */
+
+.titulo-productos {
+    font-size: 3rem;
+    margin: 5rem;
+}
+
+.coincidenciaNO{
+    font-size: 2rem;
+}
+
+.appkite{
+    margin: 5rem;
+}
+
+.appkite_titulo {
+    font-size: 3rem;
+}
+
+.appkite_descri {
+    font-size: 2rem;
+}
+
+.oferton{
+    color:rgb(20, 118, 18);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.precioTOTAL{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}

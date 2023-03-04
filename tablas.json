@@ -1,0 +1,33 @@
+[
+    {
+        "nombre": "Shortfish",
+        "precio": 5500,
+        "id": 1,
+        "imagen": "surftranierlanita800x600.jpg"
+    },
+    {
+        "nombre": "Kiteboard",
+        "precio": 5100,
+        "id": 2,
+        "imagen": "surftrainerKITE800x600.jpg"
+    },
+    {
+        "nombre": "Retrofish",
+        "precio": 5600,
+        "id": 3,
+        "imagen": "modelofront800x600.jpg"
+    },
+    {
+        "nombre": "Llavero",
+        "precio": 1500,
+        "id": 4,
+        "imagen": "llaveroceleste800x600.jpg"
+    },
+    {
+        "nombre": "Perchero",
+        "precio": 3000,
+        "id": 5,
+        "imagen": "perchero3q800x600.jpg"
+    }    
+]
+

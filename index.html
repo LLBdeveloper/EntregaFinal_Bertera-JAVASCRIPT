@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreEntrega3_Bertera-SURF-CLUB-APP</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../jsAfter1/img/kitesurfing-1-e1515791740606.jpg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- menu navegador -->
+    <header class="m-3">
+        <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SURF CLUB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shopp">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#appkite">Kitesurf-APP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#personalizada">Personalizador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Skin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><button id="botonDarkMode" class="btn btn-dark">Dark</button> </li>
+                            <li><button id="botonLightMode" class="btn btn-outline-dark">Light</button></li>
+                            <li><button id="eliminarMode" class="btn btn-secondary">Reset</button></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="m-4">
+                    <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <option selected>Ordenar por:</option>
+                        <option value="1">Mayor a menor</option>
+                        <option value="2">Menor a mayor</option>
+                        <option value="3">Alfabeticamente</option>
+                    </select>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input id="buscador" class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Search">
+                    <!-- <button id="btnBuscar" class="btn btn-outline-dark" type="submit">Buscar</button> -->
+                </form>
+            </div>
+            </div>
+            <ul style="list-style: none;"className="navbar-nav me-auto">  
+                <li className="nav-item " >
+                    <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary m-3"><img src="assets/cart.png" style="height:2rem;" alt=""></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!--Modal Carrito-->
+    <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-bodyCarrito">
+                    Productos:
+                </div>
+                <div class="row ml-ato">
+                    <p id="precioTotal" class="precioTOTAL" ></p>
+                </div>
+                <div class="modal-footer">
+                    <button class= "btn btn-danger m-5" id="BotonVaciar${productoEnCarrito.id}"><i class=""></i>Vaciar Carrito</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-success" id="botonFinalizarCompra">Terminar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- portada -->
+    <main class="mar"> 
+        <h1 class="text-center mt-5">SURF CLUB</h1>
+        <h2 class="text-center mb-5">- Sabemos de tablas -</h2>
+        <div class="portada">
+            <img src="assets/shortcut.jpg" class="img-fluid fotoPortada " style="max-width:400px;" alt="">
+        </div>
+    </main>
+
+    <hr class="mt-5">
+
+<!-- shop -->
+    <div>
+        <p id="shopp" class="titulo-productos">CONOCE NUESTRO SHOP</p>
+    </div>
+    <!--Loader-->
+    <div id="loaderTexto"></div>
+    
+    <div id="coincidencia" class="m-5 text-muted " ></div>
+    <div>
+        <div id="shop" class="card-group">
+        </div>
+    </div>
+    <div class="m-5 botonVerProductos">
+        <button id="verProductos" class="btn btn-success btn-lg p-5 m-5 ">Ver productos</button>
+        <button id="ocultarProductos" class="btn btn-danger btn-lg p-5 m-5 " >Ocultar lista</button>
+    </div>
+
+
+    <hr class="mt-5">
+
+<!-- Kitesurf-APP -->
+    <div id="appkite" class="appkite">
+        <p class="appkite_titulo">PROBA NUESTRA KITESURF-APP</p>
+        <p class="appkite_descri">Recomendadora de velas. Escribi cuantos nudos hay en tu spot y calcula que vela usar</p>
+        <button id="kitesurfAPP" type="button" class="p-5 btn btn-secondary btn-lg btn-block">INICIAR KITESURF-APP </button>
+    </div>
+
+    <hr class="mt-5">
+
+<!-- Personalizador -->
+    <!-- btnModal  -->
+    <div class="appkite" id="personalizada">
+        <p class="appkite_titulo">¡Personaliza TU tabla a TU gusto!</p>
+        <p class="appkite_descri">Podes tener la tabla que siempre quisiste, entra a nuestro personalizador de tablas </p>
+        <button id="" data-bs-toggle="modal" data-bs-target="#idModalAgregarLibro" class="p-5 btn btn-secondary btn-lg btn-block">INICIAR PERSONALIZACION</button>
+    </div>
+    <!--Modals-->
+    <div class="modal fade" id="idModalAgregarLibro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">PERSONALIZA TU TABLA</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <form  id="personalizador">
+                    <div class="mb-3">
+                        <label for="inputModelo" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="inputModelo" aria-describedby="modelo">                    
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPrecio" class="form-label">Precio:</label>
+                        <input type="text" class="form-control" id="inputPrecio" aria-describedby="precio">
+                    </div>
+                    <div class="mb-3">
+                        <p class="card-text"><small class="text-muted">Todas las tablas personalizadas tienen un precio de $6900</small></p>    
+                    </div>
+                </form>
+            </div>           
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="text" id="guardarLibroBtn" class="btn btn-dark" data-bs-dismiss="modal">Guardar Tabla</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <hr class="mt-5">
+
+<!-- formulario -->
+    <section id="contacto" class="m-5" name="contacto">
+        <form id="formulario">
+            <fieldset>
+                <legend>CONTACTA CON NOSOTROS</legend>
+                <div class="m-3">
+                    <label for="Dejanos tu mensaje"></label>
+                    <textarea cols="50" rows="5" id="Dejanos tu mensaje" name="Dejanos tu mensaje" placeholder="Escribi aca tu mensaje..."></textarea>
+                </div>
+                <div class="m-3">
+                    <label for="Dire E-Mail">Direccion de E-Mail</label>
+                    <input type="text" id="Dire E-Mail" name="Dire E-Mail" placeholder="Ingresa tu E-Mail"/>
+                </div>
+                <div class=" m-3" >
+                    <!-- <input type="submit" value="Enviar" class=" p-1" /> -->
+                    <!-- boton formu modal  -->
+                    <button id="btnSubmit" type="submit" value="Enviar" data-bs-toggle="modal" data-bs-target="#idModalFormulario" class="p-1 btn btn-secondary btn-lg btn-block">Enviar</button>
+                    <input type="reset" value="Limpiar Formulario" class=" p-1">
+                </div>
+            </fieldset>
+        </form>
+    </section>
+
+<!-- modal formulario  -->
+    <div class="modal fade" id="idModalFormulario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <p class="h3 text-center m-5">Gracias por su contacto, en la brevedad nos comunicaremos por E-Mail.</p>
+                <img src="assets/shortcut.jpg" style="width: 15rem;" class="mx-auto" alt="">
+                <p class="h4 text-center text-muted m-5">Formulario enviado.</p>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+
+<!-- footer  -->
+    <div class="container">
+        <footer class="py-5">
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p class="letraclara">© 2022 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a class="link-dark" Target="_blank" href="https://www.instagram.com/surfclub.arg/">
+                            <img src="assets/ig4.png" class="footer__redes" alt="iconoinsta">
+                        </a>
+                        <li class="ms-3">
+                            <a class="link-dark" Target="_blank" href="https://www.facebook.com/">
+                                <img src="assets/fb4.png" class="footer__redes" alt="iconofb">
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-dark" Target="_blank" href="https://www.twitter.com">
+                                <img src="assets/twitter4.png" class="footer__redes" alt="iconotwitter">
+                            </a>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+<!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/class.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/surfClubApp.js"></script>
+    <script src="js/darkMode.js"></script>
+</body>
+</html>
