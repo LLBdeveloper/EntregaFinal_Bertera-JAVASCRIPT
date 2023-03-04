@@ -13,7 +13,7 @@ let coincidencia = document.getElementById("coincidencia")
 let personalizador = document.getElementById("personalizador")
 let precioTotal = document.getElementById("precioTotal")
 let botonFinalizarCompra = document.getElementById("botonFinalizarCompra")
-let botonVaciar = document.getElementById("BotonVaciar${productoEnCarrito.id}")
+let botonVaciar = document.getElementById("BotonVaciar")
 
 
 
@@ -274,6 +274,7 @@ function vaciarCarrito() {
     carrito = [];
     localStorage.setItem('carrito', JSON.stringify(carrito));
     cargarProductosCarrito(carrito)
+    productosEnCarrito = []
 
 }
 
