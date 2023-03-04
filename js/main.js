@@ -144,8 +144,8 @@ function agregarAlCarrito(tablis){
             position: 'center',
             icon: 'info',
             title: `Producto repetido`,
-            text:`El producto ${productoAgregado.nombre} ya existe en el carrito.`,
-            timer: 2000,
+            text:`El producto ${productoAgregado.nombre} ya existe en el carrito, entrando a tu carrito podes sumar mas de este producto.`,
+            timer: 3000,
             showConfirmButton: false,
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
@@ -227,6 +227,7 @@ function cargarProductosCarrito(array){
     calcularTotal(array)
 }
 
+//total de carrito
 function calcularTotal(array){
     let total = array.reduce((acc, productoEnCarrito)=> acc + (productoEnCarrito.precio * productoEnCarrito.cantidad) ,0)
 
@@ -236,9 +237,10 @@ function calcularTotal(array){
     return total
 }
 
+//finalizar compra en carrito
 function FinalizarCompra(){
     swal.fire({
-        title: `Confirma compra ahora o seguir mirando ?`,
+        title: `¿ Confirma compra ahora o seguir mirando ?`,
         icon: `Info`,
         showCancelButton: true,
         confirmButtonText: `Confirmar`,
@@ -270,6 +272,7 @@ function FinalizarCompra(){
     )
 }
 
+//vaciar carrito
 function vaciarCarrito() {
     carrito = [];
     localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -334,6 +337,3 @@ selectOrden.addEventListener("change",()=>{
     }else{mostrarCatalogo(tablas)
     }
 })
-
-
-

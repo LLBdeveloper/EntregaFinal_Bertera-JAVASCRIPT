@@ -29,8 +29,8 @@ body {
 }
 
 .darkMode {
-    background-color: black;
-    color: aliceblue;
+    background-color: rgb(0, 0, 0);
+    color: rgb(32, 21, 21);
 }
 
 .footer__redes {
