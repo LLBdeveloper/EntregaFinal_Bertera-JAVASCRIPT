@@ -13,7 +13,6 @@ botonOscuro.addEventListener("click",()=>{
     localStorage.setItem("modoOscuro", true)
 })
 botonClaro.addEventListener("click",()=>{
-    console.log("boton claro funca")
     document.body.classList.remove("darkMode")
     localStorage.setItem("modoOscuro", false)
 })
@@ -22,7 +21,6 @@ let modoOscuro
 if(localStorage.getItem("modoOscuro")){
     modoOscuro = localStorage.getItem("modoOscuro")
 }else{
-    console.log("entra por primera vez")
     localStorage.setItem("modoOscuro", false)
     modoOscuro = localStorage.getItem("modoOscuro")
 }
