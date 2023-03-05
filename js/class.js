@@ -1,5 +1,6 @@
 ////////////////////////
 // clase  CONSTRUCTORA de productos
+///////////////////////
 class tabla {
     constructor (nombre, precio, id, imagen) {
         this.nombre = nombre;
@@ -21,7 +22,8 @@ class tabla {
 
 
 ////////////////////
-// ARRAY
+// Array
+////////////////////
 let tablas = []
 
 const cargarTablas = async ()=>{
@@ -37,6 +39,7 @@ const cargarTablas = async ()=>{
 
 ///////////////////
 // storage y json 
+//////////////////
 if(localStorage.getItem("tablas")){
     for(let tablis of JSON.parse(localStorage.getItem("tablas"))){
         let tablaNueva = new tabla(tablis.nombre, tablis.precio, tablis.id, tablis.imagen)

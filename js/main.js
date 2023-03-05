@@ -61,6 +61,7 @@ if(localStorage.getItem("carrito")){
 }else{
     productosEnCarrito = []
 }
+
 // personalizar tabla 
 function agregarTabla(array){
     let inputModelo = document.getElementById("inputModelo")
@@ -147,6 +148,7 @@ function agregarAlCarrito(tablis){
             text:`El producto ${productoAgregado.nombre} ya existe en el carrito, entrando a tu carrito podes sumar mas de este producto.`,
             timer: 3000,
             showConfirmButton: false,
+            theme: dark,
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
             },
