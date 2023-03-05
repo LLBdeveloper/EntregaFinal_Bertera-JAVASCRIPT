@@ -244,6 +244,10 @@ function FinalizarCompra(){
         title: `¿ Confirma compra ahora o seguir mirando ?`,
         icon: `Info`,
         showCancelButton: true,
+        padding: '3rem',
+        imageUrl: 'https://media1.giphy.com/media/MvbGGZEXr4qVq/giphy.gif?cid=ecf05e47o0ol25larmcuj6o5d0h91z4yumohx6yswc50af28&rid=giphy.gif&ct=g',
+        imageWidth: 400,
+        imageHeight: 200,
         confirmButtonText: `Confirmar`,
         cancelButtonText: `No, quiero seguir mirando`,
         confirmButtonColor: `Green`,
@@ -251,11 +255,22 @@ function FinalizarCompra(){
     }).then((result)=>{
         if(result.isConfirmed){
             let finalizarTotal = calcularTotal(productosEnCarrito)
-            swal.fire({
-                title: `Compra confirmada`,
+            Swal.fire({
+                title: '¡Compra confirmada!',
+                text: `Gracias por su compra, has a realizado tu compra con exito. `,
                 icon: `success`,
-                confirmButtonColor: `green`,
-                text: `Gracias por su compra, has a realizado tu compra con exito. Su costo final es de $${finalizarTotal}`
+                width: 400,
+                padding: '1rem',
+                color: '#fff',
+                background: '#444',
+                confirmButtonColor: `Green`,
+
+                backdrop: `
+                    url("https://media0.giphy.com/media/dwmNhd5H7YAz6/giphy.gif?cid=ecf05e47otpmsz4j40r3zgzp96clw32yxvlsu1wi741jfgea&rid=giphy.gif&ct=g")
+                    right top
+                    repeat
+                    
+                `
             })
             productosEnCarrito = []
             localStorage.removeItem("carrito")
@@ -264,7 +279,7 @@ function FinalizarCompra(){
                 title: `Compra no completada`,
                 icon: ` info`,
                 text: `La compra no fue completada con exito, su carrito sigue con sus productos`,
-                confirmButtonColor: `green`,
+                confirmButtonColor: `black`,
                 timer:3500
             })
         }
