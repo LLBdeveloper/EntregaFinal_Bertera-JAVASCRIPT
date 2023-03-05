@@ -54,8 +54,8 @@
                 <ul class="m-4">
                     <select id="selectOrden" class="form-select form-select-sm" aria-label=".form-select-sm example">
                         <option selected>Ordenar por:</option>
-                        <option value="1">Mayor a menor</option>
-                        <option value="2">Menor a mayor</option>
+                        <option value="1">Mayor a menor $$$</option>
+                        <option value="2">Menor a mayor $$$</option>
                         <option value="3">Alfabeticamente</option>
                     </select>
                 </ul>
@@ -77,9 +77,9 @@
     <!--Modal Carrito-->
     <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content border-grueso ">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+                    <h5 class="modal-title h1" id="exampleModalLabel"><strong>CARRO DE PRODUCTOS</strong></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modal-bodyCarrito">
@@ -89,9 +89,9 @@
                     <p id="precioTotal" class="precioTOTAL" ></p>
                 </div>
                 <div class="modal-footer">
-                    <button class= "btn btn-danger m-5" id="BotonVaciar"><i class=""></i>Vaciar Carrito</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-success" id="botonFinalizarCompra">Terminar Compra</button>
+                    <button class= "btn btn-outline-danger btn-lg m-5" id="BotonVaciar"><i class=""></i>Vaciar Carro</button>
+                    <button type="button" class="btn btn-lg btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-lg btn-dark" id="botonFinalizarCompra">Terminar Compra</button>
                 </div>
             </div>
         </div>
@@ -155,7 +155,7 @@
             <div class="modal-body" id="modal-body">
                 <form  id="personalizador">
                     <div class="mb-3">
-                        <label for="inputModelo" class="form-label">Modelo</label>
+                        <label for="inputModelo" class="form-label">Modelo:</label>
                         <input type="text" class="form-control" id="inputModelo" aria-describedby="modelo">                    
                     </div>
                     <div class="mb-3">

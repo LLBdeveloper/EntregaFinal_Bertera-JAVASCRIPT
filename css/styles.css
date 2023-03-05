@@ -77,3 +77,7 @@ body {
     font-weight: bold;
     font-size: 2rem;
 }
+
+.border-grueso{
+    border: solid 1rem #000000 !important;
+}

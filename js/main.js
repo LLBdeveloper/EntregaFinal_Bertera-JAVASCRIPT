@@ -28,13 +28,13 @@ function catalogo(array){
         let nuevaTabla = document.createElement("div")
         nuevaTabla.innerHTML = `
         <div class="card border border-secondary rounded">
-            <img class="card-img-top img-producto" src="assets/${tablis.imagen}" alt="Card image cap">
-            <div class="card-body bg-secondary">
-                <h5 class="card-title">${tablis.nombre}</h5>
-                <p class="card-text ${tablis.precio <= 3100 && "oferton" }">$ ${tablis.precio}</p>
+        <div class="card-body bg-secondary">
+        <h5 class="card-title h2">${tablis.nombre}</h5>
+        <img class="card-img-top img-producto" src="assets/${tablis.imagen}" alt="Card image cap">
+                <p class="card-text mt-2 h5 ${tablis.precio <= 3100 && "oferton" }">Precio $ ${tablis.precio}</p>
                 ${ tablis.precio <= 3100 ? `<p class="oferton">OFERTA</P>` : " "}
-                <p class="card-text"><small class="text-muted">Producto original de SURF CLUB</small></p>
-                <button id="buttonSumar${tablis.id}" class="btn btn-outline-warning">Sumar al carrito</button>
+                <p class="card-text"><small class="text-muted ">Producto original de SURF CLUB</small></p>
+                <div><button id="buttonSumar${tablis.id}" class="btn btn-outline-warning btn-lg" style="width:100%">Sumar al carro</button></div>
             </div>
         </div>
         `
@@ -165,18 +165,17 @@ function cargarProductosCarrito(array){
     array.forEach((productoEnCarrito) => {
 
         modalBodyCarrito.innerHTML += `
-            <div class="card border-primary mb-3" id ="productoCarrito${productoEnCarrito.id}" style="max-width: 540px;">
-                <img class="card-img-top" height="300px" src="assets/${productoEnCarrito.imagen}" alt="">
+            <div class="card border-dark rounded  mb-3" id ="productoCarrito${productoEnCarrito.id}" style="max-width: 540px;">
                 <div class="card-body">
-                    <h4 class="card-title">${productoEnCarrito.nombre}</h4>
-                
-                    <p class="card-text">$${productoEnCarrito.precio}</p> 
-                    <p class="card-text">Cantidad ${productoEnCarrito.cantidad}</p> 
-                    <p class="card-text">Costo $${productoEnCarrito.precio * productoEnCarrito.cantidad}</p> 
+                    <h4 class="card-title h1 ">${productoEnCarrito.nombre}</h4>
+                    <p class="card-text h3">Precio $${productoEnCarrito.precio}</p> 
+                    <img class="card-img-top" height="300px" src="assets/${productoEnCarrito.imagen}" alt="">
+                    <p class="card-text h4 text-center mt-3"><em>Cantidad ${productoEnCarrito.cantidad}</em></p> 
+                    <p class="card-text h4">Costo $${productoEnCarrito.precio * productoEnCarrito.cantidad}</p> 
 
-                    <button class= "btn btn-success" id="botonSumarUnidad${productoEnCarrito.id}"><i class=""></i>+</button>
-                    <button class= "btn btn-danger" id="botonEliminarUnidad${productoEnCarrito.id}"><i class=""></i>-</button>
-                    <button class= "btn btn-danger" id="botonEliminar${productoEnCarrito.id}"><i class="fas fa-trash-alt"></i></button>
+                    <button class= "btn btn-secondary " style="width: 49%" id="botonSumarUnidad${productoEnCarrito.id}"><i class="fas fa-plus"> </i></button>
+                    <button class= "btn btn-secondary" style="width: 49%" id="botonEliminarUnidad${productoEnCarrito.id}"><i class="fas fa-minus"> </i></button>
+                    <div><button class= "btn btn-danger mt-3" style="width: 100%" id="botonEliminar${productoEnCarrito.id}"><i class="far fa-trash-alt"></i></button></div>
                 </div>    
             </div>
         `
